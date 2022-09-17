@@ -15,7 +15,7 @@ void object::init() {
     texture = new sf::Texture();
     sprite = new sf::Sprite();
 
-    if(!texture->loadFromFile("D:\\Programming\\PingPong - POC\\Rendering\\bin\\Debug\\Remilia2.png")) {
+    if(!texture->loadFromFile("path")) {
         std::cout << "REEEE" << std::endl;
     }
 
