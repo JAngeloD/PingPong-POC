@@ -1,7 +1,6 @@
 # depslib dependency file v1.0
-1663127773 source:d:\programming\pingpong - poc\rendering\src\main.cpp
-	"main.h"
-	<SFML/Graphics.hpp>
+1663214677 source:d:\programming\pingpong - poc\rendering\src\main.cpp
+	"engine.h"
 
 1663126887 d:\programming\pingpong - poc\rendering\include\main.h
 
@@ -413,4 +412,22 @@
 	<SFML/Graphics/PrimitiveType.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
+
+1663298385 d:\programming\pingpong - poc\rendering\include\engine.h
+
+1663387237 source:d:\programming\pingpong - poc\rendering\src\engine.cpp
+	"engine.h"
+	<SFML/Graphics.hpp>
+	"object.h"
+
+1663386326 source:d:\programming\pingpong - poc\rendering\src\object.cpp
+	"object.h"
+	<windows.h>
+	<string>
+	<iostream>
+
+1663386973 d:\programming\pingpong - poc\rendering\include\object.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"string.h"
 

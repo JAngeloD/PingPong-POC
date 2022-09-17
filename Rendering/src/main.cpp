@@ -1,33 +1,14 @@
-#include "main.h"
-#include <SFML/Graphics.hpp>
-main::main()
-{
-    //ctor
-}
+#include "engine.h"
 
-main::~main()
-{
-    //dtor
-}
+engine *Engine = nullptr;
+
+const int FPS = 60;
+const int FrameDelay = 1000/FPS;
+
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
-    return 0;
+    Engine = new engine();
+    Engine->init();
+    Engine->render();
 }

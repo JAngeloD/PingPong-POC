@@ -6,7 +6,16 @@ class engine
 {
     public:
         engine();
-        virtual ~engine();
+        ~engine();
+
+        bool init();
+        bool loadCoreData();
+
+        void render();
+        void draw();
+        void close(); //Clears subsystems, textures and windows
+
+        //bool running() {return isRunning;}
 
     protected:
 

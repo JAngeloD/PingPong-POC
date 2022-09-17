@@ -6,7 +6,9 @@ class main
 {
     public:
         main();
-        virtual ~main();
+        ~main();
+
+
 
     protected:
 
