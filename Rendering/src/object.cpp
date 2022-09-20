@@ -15,19 +15,29 @@ void object::init() {
     texture = new sf::Texture();
     sprite = new sf::Sprite();
 
-    if(!texture->loadFromFile("path")) {
-        std::cout << "REEEE" << std::endl;
+    if(!texture->loadFromFile("test")) {
+        std::cout << "Test" << std::endl;
     }
 
     sprite->setTexture(*texture);
 }
 
-sf::Sprite* object::getSprite() {
-    return sprite;
+sf::Texture* object::getTexture() {return texture;}
+sf::Sprite* object::getSprite() {return sprite;}
+
+/**
+ *  Moves relative to it's position based on the parameters
+ */
+void object::move(float x, float y) {
+    sf::Vector2f pos(x, y);
+    sprite->move(pos);
 }
 
-void object::move() {
-    sf::Vector2f pos(0.01f, 0.01f);
-    sprite->move(pos);
+/**
+ *  Moves instantly to the position provided by the parameters
+ */
+void object::setPosition(float x, float y) {
+    sf::Vector2f pos(x, y);
+    sprite->setPosition(pos);
 }
 

@@ -15,11 +15,13 @@ class object
         void init();
 
         void setTexture();
-        void getTexture();
 
+        sf::Texture* getTexture();
         sf::Sprite* getSprite();
 
-        void move();
+        //Important functions
+        void move(float x, float y);
+        void setPosition(float x, float y);
 
     protected:
 

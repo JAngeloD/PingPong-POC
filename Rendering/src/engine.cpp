@@ -1,5 +1,7 @@
 #include "engine.h"
+
 #include <SFML/Graphics.hpp>
+#include <stdlib.h>
 
 #include "object.h"
 
@@ -8,6 +10,8 @@ engine::~engine() {}
 
 sf::RenderWindow* window = nullptr;
 object *test = nullptr;
+float x = 1.2f;
+float y = 1.2f;
 
 
 /**
@@ -15,6 +19,7 @@ object *test = nullptr;
  */
 bool engine::init() {
     window = new sf::RenderWindow(sf::VideoMode(800, 600), "SFML works!");
+    window->setVerticalSyncEnabled(true);
     loadCoreData();
     return true;
 }
@@ -39,9 +44,42 @@ void engine::render() {
 
         window->clear();
         draw();
-        test->move();
+
+        if(isInValidAreaX(test) && isInValidAreaY(test)) {
+            test->move(x, y);
+        }
+        else {
+            randomChangeVector(x, y);
+        }
+
         window->display();
     }
+}
+
+bool engine::isInValidAreaX(object* obj) {
+
+    if(obj->getSprite()->getPosition().x < window->getSize().x - obj->getTexture()->getSize().x &&
+       obj->getSprite()->getPosition().x > -1){
+        return true;
+    }
+    return false;
+}
+bool engine::isInValidAreaY(object* obj) {
+    if(obj->getSprite()->getPosition().y < window->getSize().y - obj->getTexture()->getSize().y &&
+       obj->getSprite()->getPosition().y > -1) {
+        return true;
+    }
+    return false;
+}
+
+void engine::randomChangeVector(float& x, float& y) {
+    if(!isInValidAreaX(test)) {
+        x *= -1.0f;
+    }
+    if(!isInValidAreaY(test)) {
+        y *= -1.0f;
+    }
+    test->move(x, y);
 }
 
 bool engine::loadCoreData() {
