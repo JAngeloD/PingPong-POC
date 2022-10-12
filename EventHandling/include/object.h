@@ -19,6 +19,9 @@ class object
         sf::Texture* getTexture();
         sf::Sprite* getSprite();
 
+        sf::Texture texture;
+        sf::Sprite sprite;
+
         //Important functions
         void move(float x, float y);
         void setPosition(float x, float y);
