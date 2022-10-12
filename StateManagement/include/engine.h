@@ -2,9 +2,16 @@
 #define ENGINE_H
 
 #include <SFML/Graphics.hpp>
-#include "object.h"
+#include <stack>
 #include <iostream>
+#include <stdlib.h>
+
+#include "object.h"
 #include "string.h"
+#include "state.h"
+
+#include "gamestate.h"
+#include "menustate.h"
 
 class engine
 {
@@ -12,19 +19,14 @@ class engine
         engine();
         ~engine();
 
-        bool init();
-        bool loadCoreData();
-
         void render();
         void draw();
-        void close(); //Clears subsystems, textures and windows
 
-        bool isInValidAreaX(object* obj);
-        bool isInValidAreaY(object* obj);
-        void randomChangeVector(float& x, float& y);
+        sf::RenderWindow* window;
+        state* currentState;
 
-
-        //bool running() {return isRunning;}
+        gamestate state1;
+        menustate state2;
 
     protected:
 

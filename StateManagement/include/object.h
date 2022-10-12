@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <iostream>
-#include "string.h"
+#include <string>
 
 class object
 {
@@ -12,9 +12,11 @@ class object
         object();
         ~object();
 
-        void init();
-
+        void init(std::string path);
         void setTexture();
+
+        sf::Texture texture;
+        sf::Sprite sprite;
 
         sf::Texture* getTexture();
         sf::Sprite* getSprite();

@@ -9,6 +9,5 @@ const int FrameDelay = 1000/FPS;
 int main() {
 
     Engine = new engine();
-    Engine->init();
     Engine->render();
 }
