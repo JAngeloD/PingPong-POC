@@ -2,9 +2,12 @@
 #define OBJECT_H
 
 #include <SFML/Graphics.hpp>
+#include <stdlib.h>
 
 #include <iostream>
 #include "string.h"
+
+#include "object.h"
 
 class object
 {
@@ -18,6 +21,9 @@ class object
 
         sf::Texture* getTexture();
         sf::Sprite* getSprite();
+
+        sf::Texture texture;
+        sf::Sprite sprite;
 
         //Important functions
         void move(float x, float y);

@@ -1,10 +1,5 @@
 #include "engine.h"
 
-#include <SFML/Graphics.hpp>
-#include <stdlib.h>
-
-#include "object.h"
-
 engine::engine(){}
 engine::~engine() {}
 
